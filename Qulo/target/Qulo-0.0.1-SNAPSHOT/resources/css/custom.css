@@ -1,3 +1,11 @@
+html, body {
+    background: url("../images/heart background image.png") transparent !important;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
 .navbar-inverse {
     background-color: #e65a58;
     border-color: #e65a58;
@@ -28,11 +36,7 @@
    background-color: #a90000 !important;
 }
 
-.myBgImage {
-    background-image: url("red-heart-background-26.jpg");
-    background-size: cover; 
-    height: 640px;
-}
+
 
 .navbar-default {
     background-color: #e65a58;
@@ -125,7 +129,7 @@ label {
 body{
 
     height: 89vh;
-    overflow: hidden;
+    
 }
 
 #imageC {
@@ -357,3 +361,5 @@ h1{
 }
 
 }
+
+

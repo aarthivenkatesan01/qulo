@@ -6,8 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.qulo.dao.UserDAO;
 import com.qulo.model.User;
  
@@ -38,22 +36,12 @@ public class LoginController {
     @RequestMapping(value = "/logoutSuccessful", method = RequestMethod.GET)
     public String logoutSuccessfulPage(Model model) {
         model.addAttribute("title", "Logout");
-        return "logoutSuccessfulPage";
+        User user = new User();
+        model.addAttribute("user", user);
+        return "loginPage";
     }
  
-    @RequestMapping(value = "/userInfo", method = RequestMethod.GET)
-    public ModelAndView userInfo(ModelAndView model, Principal principal) {
- 
-        // After user login successfully.
-        String userName = principal.getName();
-        System.out.println("UserDAO Name: "+ userName);
-        
-        
-        User newUser = userDAO.get(userName);
-        model.addObject("user", newUser);
-        model.setViewName("userInfoPage");
-	    return model;
-    }
+    
  
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public String accessDenied(Model model, Principal principal) {
